@@ -1,0 +1,9 @@
+name: EnchantMine
+version: ${project.version}
+main: me.swipez.enchantmine.EnchantMine
+api-version: 1.16
+authors: [ notnotnotswipez ]
+commands:
+  enchantmine:
+    usage: /enchantmine <start/stop>
+    description: Starts and stops the enchantment mining challenge!
