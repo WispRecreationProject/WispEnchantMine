@@ -1,5 +1,6 @@
 package me.swipez.enchantmine;
 
+import me.swipez.enchantmine.bstats.Metrics;
 import me.swipez.enchantmine.commands.CommandComplete;
 import me.swipez.enchantmine.commands.StartCommand;
 import me.swipez.enchantmine.listeners.BlockBreakListener;
@@ -11,14 +12,9 @@ public final class EnchantMine extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         getCommand("enchantmine").setExecutor(new StartCommand(this));
         getCommand("enchantmine").setTabCompleter(new CommandComplete());
         getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+        new Metrics(this, 10879);
     }
 }
